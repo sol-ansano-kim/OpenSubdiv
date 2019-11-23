@@ -12,7 +12,7 @@ out_libdir = os.path.join(out_basedir, "lib")
 
 osd_opts = {}
 osd_opts["PTEX_LOCATION"] = ""
-osd_opts["GLEW_LOCATION"] = ""
+osd_opts["GLEW_LOCATION"] = excons.GetArgument("glew-location", "")
 osd_opts["GLFW_LOCATION"] = ""
 osd_opts["NO_LIB"] = 0
 osd_opts["NO_EXAMPLES"] = 0
@@ -72,6 +72,7 @@ prjs.append({"name": "osd",
 
 
 excons.AddHelpOptions(draco="""OpenSubdiv OPTIONS
+  glew-location=<str>   :External glew library path. []
   tbb-location=<str>    : External tbb library path. []
   tbb-suffix=<str>      : Library name suffix. []""")
 
