@@ -14,27 +14,29 @@ osd_opts = {}
 osd_opts["PTEX_LOCATION"] = ""
 osd_opts["GLEW_LOCATION"] = ""
 osd_opts["GLFW_LOCATION"] = ""
-osd_opts["NO_LIB"] = 0
-osd_opts["NO_EXAMPLES"] = 0
-osd_opts["NO_TUTORIALS"] = 0
-osd_opts["NO_REGRESSION"] = 0
-osd_opts["NO_PTEX"] = 1
-osd_opts["NO_DOC"] = 1
-osd_opts["NO_OMP"] = 1
-osd_opts["NO_TBB"] = 0
-osd_opts["NO_CUDA"] = 1
-osd_opts["NO_OPENCL"] = 1
-osd_opts["NO_CLEW"] = 1
-osd_opts["NO_OPENGL"] = 0
-osd_opts["NO_METAL"] = 1
-osd_opts["NO_DX"] = 1
-osd_opts["NO_TESTS"] = 1
-osd_opts["NO_GLTESTS"] = 1
-osd_opts["NO_GLFW"] = 1
-osd_opts["NO_GLFW_X11"] = 1
+
 osd_opts["TBB_LOCATION"] = excons.GetArgument("tbb-location", "")
 osd_opts["TBB_LIB_SUFFIX"] = excons.GetArgument("tbb-suffix", "")
 
+# TODO : need to be controlled
+# osd_opts["NO_LIB"] = 0
+# osd_opts["NO_EXAMPLES"] = 0
+# osd_opts["NO_TUTORIALS"] = 0
+# osd_opts["NO_REGRESSION"] = 0
+# osd_opts["NO_PTEX"] = 1
+# osd_opts["NO_DOC"] = 1
+# osd_opts["NO_OMP"] = 1
+# osd_opts["NO_TBB"] = 0
+# osd_opts["NO_CUDA"] = 1
+# osd_opts["NO_OPENCL"] = 1
+# osd_opts["NO_CLEW"] = 1
+# osd_opts["NO_OPENGL"] = 0
+# osd_opts["NO_METAL"] = 1
+# osd_opts["NO_DX"] = 1
+# osd_opts["NO_TESTS"] = 1
+# osd_opts["NO_GLTESTS"] = 1
+# osd_opts["NO_GLFW"] = 1
+# osd_opts["NO_GLFW_X11"] = 1
 
 def _name(libname, static=True):
     return libname
