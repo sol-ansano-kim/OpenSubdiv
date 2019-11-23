@@ -68,11 +68,13 @@ prjs.append({"name": "osd",
              "cmake-opts": osd_opts,
              "cmake-cfgs": ["CMakeLists.txt"] + excons.CollectFiles(["opensubdiv"], patterns=["CMakeLists.txt"], recursive=True),
              "cmake-srcs": excons.CollectFiles(["opensubdiv"], patterns=[], recursive=True),
-             "cmake-outputs": [OsdCPUPath(static=True), OsdCPUPath(static=False), OsdGPUPath(static=True), OsdGPUPath(static=False)]})
-
+             "cmake-outputs": [OsdCPUPath(static=True), OsdGPUPath(static=True)]})
+# 
+# it seems to doesn't make shared lib on windows (and IOS?)
+# look opensubdiv/CMakeLists.txt
 
 excons.AddHelpOptions(draco="""OpenSubdiv OPTIONS
-  glew-location=<str>   :External glew library path. []
+  glew-location=<str>   : External glew library path. []
   tbb-location=<str>    : External tbb library path. []
   tbb-suffix=<str>      : Library name suffix. []""")
 
