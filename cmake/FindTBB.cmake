@@ -113,7 +113,7 @@ foreach(TBB_LIB tbb             tbb_debug
 
     find_library(TBB_${TBB_LIB}_LIBRARY
         NAMES
-            ${TBB_LIB}
+            ${TBB_LIB}${TBB_LIB_SUFFIX}
         HINTS
             "${TBB_LOCATION}/lib"
             "${TBB_LOCATION}/bin"

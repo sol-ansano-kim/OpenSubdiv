@@ -7,3 +7,11 @@
 osdshim_wrap.cpp
 shim.py
 .DS_Store
+
+.build/
+.sconsign.dblite
+excons.cache
+osd.cmake.config
+osd.cmake.outputs
+release/
+debug/
