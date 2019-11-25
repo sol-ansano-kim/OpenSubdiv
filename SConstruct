@@ -33,8 +33,8 @@ osd_opts["NO_TESTS"] = 1
 osd_opts["NO_GLTESTS"] = 1
 osd_opts["NO_GLFW"] = 1
 osd_opts["NO_GLFW_X11"] = 1
-osd_opts["TBB_LOCATION"] = excons.GetArgument("tbb-location", "")
-osd_opts["TBB_LIB_SUFFIX"] = excons.GetArgument("tbb-suffix", "")
+osd_opts["TBB_LOCATION"] = ""
+osd_opts["TBB_LIB_SUFFIX"] = ""
 
 
 rv = excons.ExternalLibRequire("glew")
