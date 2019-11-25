@@ -11,7 +11,7 @@ shim.py
 .build/
 .sconsign.dblite
 excons.cache
-osd.cmake.config
-osd.cmake.outputs
+*.cmake.config
+*.cmake.outputs
 release/
 debug/
