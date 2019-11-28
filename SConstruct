@@ -35,6 +35,7 @@ osd_opts["NO_GLFW"] = 1
 osd_opts["NO_GLFW_X11"] = 1
 osd_opts["TBB_LOCATION"] = ""
 osd_opts["TBB_LIB_SUFFIX"] = ""
+osd_opts["OSD_BUILD_STATIC"] = 1 if excons.GetArgument("osd-static", 1, int) != 0 else 0
 
 
 rv = excons.ExternalLibRequire("glew")
@@ -97,6 +98,10 @@ prjs.append({"name": "osd",
 
 # it seems to doesn't make shared lib on windows (and IOS?)
 # look opensubdiv/CMakeLists.txt
+
+
+excons.AddHelpOptions(tbb="""OPENSUBDIV OPTIONS
+  osd-static=0|1 : Toggle between static and shared version of the libraries. [1]""")
 
 
 excons.DeclareTargets(env, prjs)

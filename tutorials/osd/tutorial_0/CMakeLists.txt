@@ -31,9 +31,15 @@ _add_executable(osd_tutorial_0 "tutorials/osd"
 )
 
 
-target_link_libraries(osd_tutorial_0
-    osd_static_cpu
-)
+if ( OSD_BUILD_STATIC AND NOT WIN32)
+    target_link_libraries(osd_tutorial_0
+        osd_static_cpu
+    )
+else()
+    target_link_libraries(osd_tutorial_0
+        osd_dynamic_cpu
+    )
+endif()
 
 install(TARGETS osd_tutorial_0 DESTINATION "${CMAKE_BINDIR_BASE}/tutorials")
 

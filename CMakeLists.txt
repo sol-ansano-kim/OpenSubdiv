@@ -308,6 +308,7 @@ option(NO_TESTS "Disable all tests")
 option(NO_GLTESTS "Disable GL tests")
 option(NO_GLFW "Disable components depending on GLFW" OFF)
 option(NO_GLFW_X11 "Disable GLFW components depending on X11" OFF)
+option(OSD_BUILD_STATIC "Build OpenSubdiv as a static lib" ON)
 
 option(OPENSUBDIV_GREGORY_EVAL_TRUE_DERIVATIVES "Enable true derivative evaluation for Gregory basis patches" OFF)
 
@@ -595,9 +596,17 @@ if (WIN32)
     # Link examples & regressions statically against Osd for
     # Windows until all the kinks can be worked out.
     if( OSD_GPU )
-        set( OSD_LINK_TARGET osd_static_cpu osd_static_gpu )
+        if ( OSD_BUILD_STATIC AND NOT NOT WIN32)
+            set( OSD_LINK_TARGET osd_static_cpu osd_static_gpu )
+        else()
+            set( OSD_LINK_TARGET osd_dynamic_cpu osd_dynamic_gpu )
+        endif()
     else()
-        set( OSD_LINK_TARGET osd_static_cpu )
+        if ( OSD_BUILD_STATIC AND NOT NOT WIN32)
+            set( OSD_LINK_TARGET osd_static_cpu )
+        else()
+            set( OSD_LINK_TARGET osd_dynamic_gpu )
+        endif()
     endif()
     
 endif()
