@@ -74,9 +74,11 @@ def _path(libname, static=True):
 
     return os.path.join(out_libdir, libpath)
 
-def _require(pathFunc, static=True):
+def _require(pathFunc, libname, static=True):
     # are symbols visible?
     env.Append(CPPPATH=[out_incdir])
+    env.Append(CPPDEFINES=["OPENSUBDIV_HAS_GLSL_TRANSFORM_FEEDBACK", "OPENSUBDIV_HAS_GLSL_COMPUTE"])
+
     excons.Link(env, pathFunc(static), static=static, force=True, silent=True)
 
 
@@ -84,8 +86,8 @@ OsdCPUName = functools.partial(_name, "osdCPU")
 OsdGPUName = functools.partial(_name, "osdGPU")
 OsdCPUPath = functools.partial(_path, "osdCPU")
 OsdGPUPath = functools.partial(_path, "osdGPU")
-RequireOsdCPU = functools.partial(_require, "osdCPU")
-RequireOsdGPU = functools.partial(_require, "osdGPU")
+RequireOsdCPU = functools.partial(_require, OsdCPUPath)
+RequireOsdGPU = functools.partial(_require, OsdGPUPath)
 
 
 prjs = []
