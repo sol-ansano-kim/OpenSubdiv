@@ -77,7 +77,6 @@ def _path(libname, static=True):
 def _require(pathFunc, env, static=True):
     # are symbols visible?
     env.Append(CPPPATH=[out_incdir])
-    env.Append(CPPDEFINES=["OPENSUBDIV_HAS_GLSL_TRANSFORM_FEEDBACK", "OPENSUBDIV_HAS_GLSL_COMPUTE"])
 
     excons.Link(env, pathFunc(static), static=static, force=True, silent=True)
 
