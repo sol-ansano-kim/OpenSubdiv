@@ -4,3 +4,6 @@
 [submodule "tbb"]
 	path = tbb
 	url = https://github.com/gatgui/tbb
+[submodule "mini-glew"]
+	path = mini-glew
+	url = git://github.com/sol-ansano-kim/mini-glew

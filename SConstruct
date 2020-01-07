@@ -38,9 +38,12 @@ osd_opts["TBB_LIB_SUFFIX"] = ""
 osd_opts["OSD_BUILD_STATIC"] = 1 if excons.GetArgument("osd-static", 1, int) != 0 else 0
 
 
-
 rv = excons.ExternalLibRequire("glew")
-if rv["require"]:
+if not rv["require"]:
+    excons.PrintOnce("OpenSubdiv: Build glew from sources ...")
+    excons.Call("mini-glew", targets=["glew"], imp=["GlewPath"], overrides={"glew-static": 1})
+    osd_opts["GLEW_LOCATION"] = os.path.dirname(os.path.dirname(GlewPath()))
+else:
     d = os.path.dirname(rv["incdir"])
     osd_opts["GLEW_LOCATION"] = d
 
