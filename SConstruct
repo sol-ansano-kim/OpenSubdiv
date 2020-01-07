@@ -17,7 +17,7 @@ osd_opts["GLEW_LOCATION"] = ""
 osd_opts["GLFW_LOCATION"] = ""
 osd_opts["NO_LIB"] = 0
 osd_opts["NO_EXAMPLES"] = 0
-osd_opts["NO_TUTORIALS"] = 0
+osd_opts["NO_TUTORIALS"] = 1
 osd_opts["NO_REGRESSION"] = 0
 osd_opts["NO_PTEX"] = 1
 osd_opts["NO_DOC"] = 1
@@ -36,6 +36,7 @@ osd_opts["NO_GLFW_X11"] = 1
 osd_opts["TBB_LOCATION"] = ""
 osd_opts["TBB_LIB_SUFFIX"] = ""
 osd_opts["OSD_BUILD_STATIC"] = 1 if excons.GetArgument("osd-static", 1, int) != 0 else 0
+
 
 
 rv = excons.ExternalLibRequire("glew")
